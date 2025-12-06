@@ -3,12 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>以毒攻毒：網絡詐騙反制中心 - 數據保護與反制 (單頁整合版)</title>
+    <title>以毒攻毒：網絡詐騙反制中心 - 數據保護與反制</title>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;700&family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
         /* ==================================== */
-        /* 核心樣式與佈局 (來自 styles.css) */
+        /* 核心樣式與佈局 */
         /* ==================================== */
 
         * {
@@ -54,7 +54,7 @@
         }
 
         /* ==================================== */
-        /* 按鈕樣式 (來自 styles.css) */
+        /* 按鈕樣式 */
         /* ==================================== */
 
         .btn {
@@ -127,7 +127,7 @@
         }
 
         /* ==================================== */
-        /* Header, Navigation, Hero (來自 styles.css) */
+        /* Header, Navigation, Hero */
         /* ==================================== */
 
         header {
@@ -248,7 +248,7 @@
         }
 
         /* ==================================== */
-        /* 卡片與內容 (Scam Cards) (來自 styles.css) */
+        /* 卡片與內容 (Scam Cards) */
         /* ==================================== */
 
         .scam-grid {
@@ -294,38 +294,43 @@
             background-color: #333;
             border-left: 5px solid #FFC107;
             padding: 15px;
-            margin-top: 15px;
+            margin-top: 20px;
             border-radius: 5px;
+            font-size: 0.9em;
         }
 
         .scam-example h4 {
             color: #FFC107;
-            margin-top: 0;
         }
 
         .scam-example .warning {
             color: #FF5722;
             font-weight: bold;
             display: flex;
-            align-items: center;
-            margin-top: 10px;
+            align-items: flex-start;
         }
 
         .scam-example .warning i {
             margin-right: 8px;
+            font-size: 1.2em;
+            color: #FFC107;
         }
 
+        /* ==================================== */
+        /* 提交情報介面優化 (Report Form) */
+        /* ==================================== */
 
-        /* ==================================== */
-        /* 報告與表格 (Report & Form) (來自 styles.css) */
-        /* ==================================== */
+        #report {
+            padding: 40px 0;
+        }
+
         .report-form-wrapper {
-            background-color: #1f1f1f;
+            background: linear-gradient(135deg, #1f1f1f 0%, #0d0d0d 100%);
             padding: 40px;
-            border-radius: 10px;
-            box-shadow: 0 0 20px rgba(0, 188, 212, 0.4);
+            border-radius: 15px;
+            box-shadow: 0 0 30px rgba(0, 188, 212, 0.3);
             max-width: 900px;
-            margin: 0 auto;
+            margin: 0 auto 60px auto;
             border: 1px solid #333;
         }
 
@@ -361,7 +366,9 @@
             color: #4CAF50;
         }
 
-        .report-form input[type="text"], .report-form textarea, .report-form select {
+        .report-form input[type="text"],
+        .report-form textarea,
+        .report-form select {
             width: 100%;
             padding: 15px;
             border: 1px solid #444;
@@ -372,7 +379,9 @@
             transition: border-color 0.3s ease, box-shadow 0.3s ease;
         }
 
-        .report-form input[type="text"]:focus, .report-form textarea:focus, .report-form select:focus {
+        .report-form input[type="text"]:focus,
+        .report-form textarea:focus,
+        .report-form select:focus {
             border-color: #4CAF50;
             box-shadow: 0 0 0 4px rgba(76, 175, 80, 0.3);
             outline: none;
@@ -397,15 +406,8 @@
         }
 
         /* ==================================== */
-        /* 資源區塊 (Resources) (來自 styles.css) */
+        /* 資源區塊 (Resources) */
         /* ==================================== */
-
-        .resource-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-            margin-bottom: 60px;
-        }
 
         .resource-card {
             background: #212121;
@@ -413,31 +415,132 @@
             border-bottom: 5px solid #4CAF50;
             padding: 25px;
             border-radius: 10px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
             display: flex;
             flex-direction: column;
-            align-items: flex-start;
         }
 
         .resource-card i {
-            font-size: 2.5em;
-            color: #FFC107;
+            font-size: 3.5em;
+            color: #4CAF50;
+            text-shadow: 0 0 8px rgba(76, 175, 80, 0.5);
             margin-bottom: 15px;
         }
 
         .resource-card h3 {
-            color: white;
-            margin-top: 0;
-            font-size: 1.4em;
+            color: #00BCD4;
         }
 
-        .resource-card p {
-            flex-grow: 1;
+        .resource-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin-bottom: 60px;
+        }
+
+        /* ==================================== */
+        /* Footer */
+        /* ==================================== */
+
+        footer {
+            background-color: #0a0a0a;
+            color: #888;
+            padding: 2.5em 0;
+            border-top: 2px solid #333;
+            text-align: center;
         }
 
 
         /* ==================================== */
-        /* 策略中心頁面 (Strategy Center) 樣式 (來自 styles.css & strategy_center.html) */
+        /* 通用解決方案模態框 (Solution Modal) */
+        /* ==================================== */
+
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 2000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0, 0, 0, 0.95);
+            backdrop-filter: blur(8px);
+            padding-top: 30px;
+        }
+
+        .modal-content {
+            background-color: #1a1a1a;
+            margin: 3% auto;
+            padding: 40px;
+            border: 3px solid #00BCD4;
+            width: 95%;
+            max-width: 900px;
+            border-radius: 15px;
+            box-shadow: 0 0 50px rgba(0, 188, 212, 0.6);
+            position: relative;
+            color: #eee;
+            animation: fadeIn 0.4s;
+            max-height: 90vh;
+            overflow-y: auto;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .close-button {
+            color: #FF5722;
+            position: absolute;
+            top: 15px;
+            right: 30px;
+            font-size: 36px;
+            font-weight: bold;
+            line-height: 1;
+            transition: color 0.3s;
+            cursor: pointer;
+        }
+
+        .close-button:hover {
+            color: #E64A19;
+        }
+
+        .modal-solution-title {
+            text-align: center;
+            color: #4CAF50;
+            font-size: 2.2em;
+            border-bottom: 2px solid #00BCD4;
+            padding-bottom: 15px;
+            margin-bottom: 25px;
+        }
+
+        .modal-solution-title i {
+            color: #00BCD4;
+            margin-right: 10px;
+        }
+
+        .modal-solution-text p {
+            font-size: 1.05em;
+            line-height: 1.8;
+            margin-bottom: 1.5em;
+            padding-left: 10px;
+            border-left: 3px solid rgba(76, 175, 80, 0.5);
+        }
+
+        .btn-modal-close {
+            background-color: #555;
+            color: white;
+            margin: 30px auto 0 auto;
+            display: block;
+            width: 80%;
+            max-width: 300px;
+        }
+        .btn-modal-close:hover {
+            background-color: #FF5722;
+        }
+
+        /* ==================================== */
+        /* 反制策略中心頁面 (Strategy Center) 樣式 */
         /* ==================================== */
 
         .strategy-content {
@@ -468,92 +571,119 @@
             margin-bottom: 25px;
             position: relative;
             border-left: 5px solid;
-            transition: box-shadow 0.3s ease;
         }
 
-        .scam-detail-card.high-risk { border-color: #FF5722; }
-        .scam-detail-card.medium-risk { border-color: #FFC107; }
+        .high-risk {
+            border-left-color: #FF5722; /* 高風險：紅 */
+            box-shadow: 0 0 15px rgba(255, 87, 34, 0.3);
+        }
 
-        .scam-detail-card:hover {
-            box-shadow: 0 0 15px rgba(0, 188, 212, 0.3);
+        .medium-risk {
+            border-left-color: #FFC107; /* 中風險：黃 */
         }
 
         .risk-badge {
             position: absolute;
-            top: 15px;
-            right: 15px;
+            top: 0;
+            right: 0;
             background-color: #FF5722;
             color: white;
-            padding: 5px 10px;
-            border-radius: 5px;
+            padding: 5px 15px;
+            border-top-right-radius: 10px;
+            border-bottom-left-radius: 10px;
             font-weight: bold;
-            font-size: 0.8em;
+            font-size: 0.9em;
         }
 
         .scam-detail-card h3 {
             color: #00BCD4;
-            margin-bottom: 10px;
+            margin-top: 0;
             font-size: 1.5em;
         }
 
         .scam-method {
-            background-color: #333;
-            padding: 10px 15px;
-            border-radius: 5px;
-            margin-bottom: 15px;
-            color: #FFC107;
-        }
-
-        .scam-countermeasure {
-            margin-top: 15px;
+            font-size: 1em;
             padding: 10px 0;
-            border-top: 1px dashed #444;
+            color: #ccc;
         }
 
-        .scam-countermeasure i {
+        .scam-method i {
             color: #4CAF50;
-            margin-right: 8px;
+            margin-right: 5px;
         }
 
-        /* 決策流程圖樣式 */
+        .case-study {
+            background-color: #333;
+            padding: 15px;
+            border-radius: 6px;
+            border: 1px dashed #555;
+            margin: 15px 0;
+        }
+
+        .case-study h4 {
+            color: #FFC107;
+            margin-top: 0;
+            border-bottom: 1px solid #444;
+            padding-bottom: 5px;
+        }
+
+        .touch-point {
+            font-weight: bold;
+            color: #E0E0E0;
+        }
+
+        .touch-point i {
+            color: #FF5722;
+            margin-right: 5px;
+        }
+
+        /* 決策流程圖 */
+        .flow-text {
+            text-align: center;
+            margin-bottom: 30px;
+            font-size: 1.1em;
+            color: #4CAF50;
+        }
+
         .flow-chart {
             display: flex;
-            justify-content: space-around;
+            justify-content: space-between;
             align-items: flex-start;
+            flex-wrap: wrap;
             text-align: center;
-            margin-top: 40px;
         }
 
         .flow-step {
-            width: 30%;
-            background-color: #2a2a2a;
+            flex: 1;
+            min-width: 200px;
+            background-color: #333;
             padding: 20px;
             border-radius: 10px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
             border: 2px solid #00BCD4;
-            height: 100%; /* 確保高度一致，便於對齊 */
+            position: relative;
         }
 
         .flow-step h4 {
-            color: #4CAF50;
-            margin-bottom: 10px;
+            color: #00BCD4;
         }
 
         .step-number {
             display: inline-block;
-            background-color: #FF5722;
+            background-color: #4CAF50;
             color: white;
-            border-radius: 50%;
-            width: 30px;
-            height: 30px;
-            line-height: 30px;
+            padding: 5px 15px;
+            border-radius: 20px;
+            margin-bottom: 10px;
             font-weight: bold;
-            margin-bottom: 15px;
         }
 
         .flow-arrow {
-            font-size: 3em;
-            color: #00BCD4;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex: 0 0 50px;
+            font-size: 2em;
+            color: #FFC107;
             margin: 0 10px;
         }
 
@@ -561,7 +691,155 @@
             border-color: #FF5722;
         }
 
-        /* 數據庫查詢頁面專用樣式 (來自 resources-database.html) */
+        /* ==================================== */
+        /* 響應式佈局 (Responsive Design) */
+        /* ==================================== */
+
+        @media (max-width: 900px) {
+            .flow-chart {
+                flex-direction: column;
+                align-items: center;
+            }
+            .flow-step {
+                width: 80%;
+                margin-bottom: 20px;
+            }
+            .flow-arrow {
+                transform: rotate(90deg);
+                margin: 10px 0;
+            }
+        }
+
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2em;
+            }
+            nav ul {
+                flex-direction: column;
+                align-items: center;
+            }
+            nav ul li a {
+                padding: 10px 20px;
+                width: 100%;
+                justify-content: center;
+            }
+            .hero {
+                min-height: 300px;
+            }
+            .hero h2 {
+                font-size: 2em;
+            }
+            .hero p {
+                font-size: 1em;
+            }
+            .section-title {
+                font-size: 1.8em;
+            }
+            .scam-grid, .resource-grid {
+                grid-template-columns: 1fr;
+            }
+            .scam-card, .resource-card, .report-form-wrapper {
+                padding: 20px;
+            }
+
+            /* 報告表單在小螢幕上變為單列 */
+            .form-grid {
+                grid-template-columns: 1fr;
+            }
+            .modal-content {
+                margin: 5% auto;
+                padding: 20px;
+            }
+            .alert-header h2 {
+                font-size: 1.8em;
+            }
+        }
+        /* ==================================== */
+        /* 社群情報交流區樣式 */
+        /* ==================================== */
+
+        .reports-list {
+            background-color: #2a2a2a;
+            padding: 15px;
+            border-radius: 8px;
+            max-height: 400px;
+            overflow-y: auto;
+            border: 1px solid #4CAF50;
+        }
+
+        .community-report-item {
+            padding: 10px;
+            margin-bottom: 15px;
+            background-color: #1f1f1f;
+            border-left: 3px solid #00BCD4; /* 科技藍色邊框 */
+            border-radius: 4px;
+        }
+
+        .community-report-item p {
+            margin-bottom: 5px;
+            font-size: 0.9em;
+        }
+
+        .community-report-item strong {
+            color: #FFC107; /* 警告黃色 */
+        }
+
+        .no-report-placeholder {
+            text-align: center;
+            padding: 20px;
+            color: #999;
+        }
+        /* ==================================== */
+        /* 核心樣式與佈局 */
+        /* ... (您原有的 styles.css 內容) ... */
+        /* ==================================== */
+
+        @media (max-width: 768px) {
+            /* ... (您原有的 styles.css 內容) ... */
+            .alert-header h2 {
+                font-size: 1.8em;
+            }
+        }
+
+        /* ==================================== */
+        /* 社群情報交流區樣式 (新增部分) */
+        /* ==================================== */
+
+        .reports-list {
+            background-color: #2a2a2a;
+            padding: 15px;
+            border-radius: 8px;
+            max-height: 400px;
+            overflow-y: auto;
+            border: 1px solid #4CAF50;
+        }
+
+        .community-report-item {
+            padding: 10px;
+            margin-bottom: 15px;
+            background-color: #1f1f1f;
+            border-left: 3px solid #00BCD4; /* 科技藍色邊框 */
+            border-radius: 4px;
+        }
+
+        .community-report-item p {
+            margin-bottom: 5px;
+            font-size: 0.9em;
+        }
+
+        .community-report-item strong {
+            color: #FFC107; /* 警告黃色 */
+        }
+
+        .no-report-placeholder {
+            text-align: center;
+            padding: 20px;
+            color: #999;
+        }
+
+        /* ==================================== */
+        /* 專門為數據庫查詢頁面設計的樣式 */
+        /* ==================================== */
         #database-query { padding: 60px 0; }
         .query-wrapper {
             background-color: #1f1f1f;
@@ -661,166 +939,8 @@
             margin-top: 0;
         }
 
-        /* 模態框 (Modal) 樣式 (來自 styles.css) */
-        .modal {
-            display: none; /* 預設隱藏 */
-            position: fixed;
-            z-index: 2000;
-            left: 0;
-            top: 0;
-            width: 100%;
-            height: 100%;
-            overflow: auto;
-            background-color: rgba(0, 0, 0, 0.9); /* 黑色背景 */
-            backdrop-filter: blur(5px);
-            padding-top: 50px;
-        }
-
-        .modal-content {
-            background-color: #1a1a1a;
-            margin: 5% auto; /* 5% from the top and centered */
-            padding: 30px;
-            border: 1px solid #00BCD4;
-            width: 90%;
-            max-width: 800px;
-            border-radius: 15px;
-            position: relative;
-            box-shadow: 0 0 25px rgba(0, 188, 212, 0.7);
-            animation: zoomIn 0.3s ease-out;
-        }
-
-        @keyframes zoomIn {
-            from { opacity: 0; transform: scale(0.9); }
-            to { opacity: 1; transform: scale(1); }
-        }
-
-        .close-button {
-            color: #aaa;
-            position: absolute;
-            top: 15px;
-            right: 25px;
-            font-size: 36px;
-            font-weight: bold;
-            line-height: 1;
-            transition: color 0.3s;
-            cursor: pointer;
-        }
-
-        .close-button:hover {
-            color: #E64A19;
-        }
-
-        .modal-solution-title {
-            text-align: center;
-            color: #4CAF50;
-            font-size: 2.2em;
-            border-bottom: 2px solid #00BCD4;
-            padding-bottom: 15px;
-            margin-bottom: 25px;
-        }
-
-        .modal-solution-title i {
-            color: #00BCD4;
-            margin-right: 10px;
-        }
-
-        .modal-solution-text p {
-            font-size: 1.05em;
-            line-height: 1.8;
-            margin-bottom: 1.5em;
-            padding-left: 10px;
-            border-left: 3px solid rgba(76, 175, 80, 0.5);
-        }
-
-        .btn-modal-close {
-            background-color: #555;
-            color: white;
-            margin: 30px auto 0 auto;
-            display: block;
-            width: 80%;
-            max-width: 300px;
-        }
-
-        .btn-modal-close:hover {
-            background-color: #FF5722;
-        }
-
-        /* 社群情報交流區樣式 (來自 styles.css) */
-        .reports-list {
-            margin-top: 15px;
-            padding: 15px;
-            background-color: #0d0d0d;
-            border-radius: 8px;
-            max-height: 400px;
-            overflow-y: auto;
-            border: 1px solid #4CAF50;
-        }
-
-        .community-report-item {
-            padding: 10px;
-            margin-bottom: 15px;
-            background-color: #1f1f1f;
-            border-left: 3px solid #00BCD4; /* 科技藍色邊框 */
-            border-radius: 4px;
-        }
-
-        .community-report-item p {
-            margin-bottom: 5px;
-            font-size: 0.9em;
-        }
-
-        .community-report-item strong {
-            color: #FFC107; /* 警告黃色 */
-        }
-
-        .no-report-placeholder {
-            text-align: center;
-            padding: 20px;
-            color: #999;
-        }
-
-        /* ==================================== */
-        /* 響應式佈局 (Responsive Design) (來自 styles.css & resources-database.html) */
-        /* ==================================== */
-        @media (max-width: 900px) {
-            .flow-chart {
-                flex-direction: column;
-                align-items: center;
-            }
-            .flow-step {
-                width: 80%;
-                margin-bottom: 20px;
-            }
-            .flow-arrow {
-                transform: rotate(90deg);
-                margin: 10px 0;
-            }
-        }
+        /* 響應式 */
         @media (max-width: 768px) {
-            header h1 {
-                font-size: 2em;
-            }
-            nav ul {
-                flex-direction: column;
-                align-items: center;
-            }
-            nav ul li a {
-                padding: 10px 20px;
-                width: 100%;
-                justify-content: center;
-            }
-            .hero {
-                min-height: 300px;
-            }
-            .hero h2 {
-                font-size: 2em;
-            }
-            .scam-grid {
-                grid-template-columns: 1fr;
-            }
-            .form-grid {
-                grid-template-columns: 1fr;
-            }
             .query-input-group {
                 flex-direction: column;
             }
@@ -831,344 +951,648 @@
             .risk-badge-output {
                 margin-top: 10px;
             }
-            .resource-grid {
-                grid-template-columns: 1fr;
-            }
+        }
+
+        /* ==================================== */
+        /* 單頁應用頁面切換樣式 */
+        /* ==================================== */
+        .page-section {
+            display: none;
+        }
+        .page-section.active {
+            display: block;
         }
     </style>
 </head>
 <body>
-
-    <header>
-        <div class="container">
-            <div class="logo">
-                <i class="fas fa-shield-virus"></i>
-                <h1>以毒攻毒：網絡詐騙反制中心</h1>
+    <!-- 主要頁面容器 -->
+    <div id="main-page" class="page-section active">
+        <header>
+            <div class="container">
+                <div class="logo">
+                    <i class="fas fa-shield-virus"></i>
+                    <h1>以毒攻毒：網絡詐騙反制中心</h1>
+                </div>
+                <p>數據保護與反制戰略：識破陷阱，讓詐騙者無所遁形！</p>
             </div>
-            <p>數據保護與反制戰略：識破陷阱，讓詐騙者無所遁形！</p>
-        </div>
-    </header>
+        </header>
 
-    <nav>
-        <div class="container">
-            <ul>
-                <li><a href="#home" class="active"><i class="fas fa-microchip"></i> 核心系統</a></li>
-                <li><a href="#scam-types"><i class="fas fa-skull-crossbones"></i> 威脅分析</a></li>
-                <li><a href="#report"><i class="fas fa-bullhorn"></i> 提交情報</a></li>
-                <li><a href="#database-query"><i class="fas fa-search"></i> 數據庫查詢</a></li>
-                <li><a href="#latest"><i class="fas fa-brain"></i> 反制策略中心</a></li>
-            </ul>
-        </div>
-    </nav>
-
-    <main class="container strategy-content">
-
-        <section id="home" class="hero">
-            <div class="hero-content">
-                <h2>🚨 威脅級別：紅色警報！</h2>
-                <p>最近，"零元投資" 和 "AI語音模仿" 威脅正在快速蔓延。請立即進入反制系統。</p>
-                <a href="#scam-types" class="btn btn-primary">進入威脅分析區 <i class="fas fa-arrow-right"></i></a>
+        <nav>
+            <div class="container">
+                <ul>
+                    <li><a href="#" onclick="showPage('main-page')"><i class="fas fa-microchip"></i> 核心系統</a></li>
+                    <li><a href="#scam-types" onclick="showPage('main-page')"><i class="fas fa-skull-crossbones"></i> 威脅分析</a></li>
+                    <li><a href="#report" onclick="showPage('main-page')"><i class="fas fa-bullhorn"></i> 提交情報</a></li>
+                    <li><a href="#resources" onclick="showPage('main-page')"><i class="fas fa-book"></i> 反制資源</a></li>
+                    <li><a href="#" onclick="showPage('resources-database')"><i class="fas fa-search"></i> 數據庫查詢</a></li>
+                    <li><a href="#" onclick="showPage('strategy-center')"><i class="fas fa-brain"></i> 反制策略</a></li>
+                </ul>
             </div>
-        </section>
+        </nav>
 
-        <section id="scam-types">
-            <h2 class="section-title">常見網絡詐騙類型分析與案例</h2>
-            <div class="scam-grid">
-
-                <div class="scam-card">
-                    <div class="scam-icon"><i class="fas fa-envelope-open-text"></i></div>
-                    <h3>🎣 釣魚郵件/簡訊 (Phishing)</h3>
-                    <p>詐騙者冒充銀行、政府或知名公司，誘騙您點擊惡意連結或輸入個人登入資訊。</p>
-                    <button class="btn btn-action launch-solution" data-title="1. 釣魚郵件 / 簡訊 (Phishing)">
-                        如何解決 <i class="fas fa-chevron-right"></i>
-                    </button>
-                    <div class="scam-example">
-                        <h4>案例分析：</h4>
-                        <p>收到一封聲稱來自「您的銀行」的郵件，主題為「帳戶異常，請立即驗證！」郵件內含一個看似官方但實際是假冒的連結。點擊後，要求您輸入網銀帳號和密碼。</p>
-                        <p class="warning"><i class="fas fa-exclamation-triangle"></i> **警惕：** 銀行不會通過郵件或簡訊要求您點擊連結驗證帳戶！</p>
-                    </div>
+        <main class="container">
+            <section id="home" class="hero">
+                <div class="hero-content">
+                    <h2>🚨 威脅級別：紅色警報！</h2>
+                    <p>最近，"零元投資" 和 "AI語音模仿" 威脅正在快速蔓延。請立即進入反制系統。</p>
+                    <a href="#scam-types" class="btn btn-primary" onclick="showPage('main-page')">進入威脅分析區 <i class="fas fa-arrow-right"></i></a>
                 </div>
+            </section>
 
-                <div class="scam-card">
-                    <div class="scam-icon"><i class="fas fa-chart-line"></i></div>
-                    <h3>💰 假投資詐騙 (Investment Scams)</h3>
-                    <p>聲稱有高報酬、低風險的加密貨幣、外匯或股票投資，誘騙您投入資金，隨後關閉平台或凍結資金。</p>
-                    <button class="btn btn-action launch-solution" data-title="2. 假投資詐騙 (Investment Scams)">
-                        如何解決 <i class="fas fa-chevron-right"></i>
-                    </button>
-                    <div class="scam-example">
-                        <h4>案例分析：</h4>
-                        <p>在交友軟體上認識一位「投資專家」，熱情推薦某「高收益」的加密貨幣平台。起初小額投資確有盈利，但當您投入大筆資金後，該平台便無法提現，聯繫對方也石沉大海。</p>
-                        <p class="warning"><i class="fas fa-exclamation-triangle"></i> **警惕：** 凡是強調「保證獲利」、「穩賺不賠」的投資，幾乎都是詐騙！</p>
-                    </div>
-                </div>
-
-                <div class="scam-card">
-                    <div class="scam-icon"><i class="fas fa-user-friends"></i></div>
-                    <h3>📞 假冒親友/公務機關 (Impersonation)</h3>
-                    <p>通過電話、社交媒體或通訊軟體，假冒親友、警察、檢察官或政府人員，要求緊急匯款、索取個人資料或聲稱您涉入案件。</p>
-                    <button class="btn btn-action launch-solution" data-title="3. 冒充詐騙 (Impersonation)">
-                        如何解決 <i class="fas fa-chevron-right"></i>
-                    </button>
-                    <div class="scam-example">
-                        <h4>案例分析：</h4>
-                        <p>收到一條陌生號碼的簡訊：「我是xxx（你朋友的名字），我換號碼了，請加我Line。」加了Line後，對方會聲稱遇到困難（如車禍、急需醫藥費等），要求您幫忙匯款。</p>
-                        <p class="warning"><i class="fas fa-exclamation-triangle"></i> **警惕：** 遇到親友要求匯款，務必撥打原有電話號碼或見面確認！</p>
-                    </div>
-                </div>
-
-                <div class="scam-card">
-                    <div class="scam-icon"><i class="fas fa-shopping-cart"></i></div>
-                    <h3>🎁 網路購物/拍賣詐騙</h3>
-                    <p>聲稱您中了大獎、商品價格極低，或假冒賣家/買家，但需要先支付手續費、稅金或運費，或誘騙您點擊惡意收款連結。</p>
-                    <button class="btn btn-action launch-solution" data-title="4. 網絡購物／拍賣詐騙 (Shopping & Auction)">
-                        如何解決 <i class="fas fa-chevron-right"></i>
-                    </button>
-                    <div class="scam-example">
-                        <h4>案例分析：</h4>
-                        <p>在某二手拍賣平台，賣家聲稱商品超低價，但要求您點擊他提供的「專屬連結」進行交易，該連結可能是釣魚網站，竊取您的信用卡資訊。或買家聲稱無法付款，要求您操作ATM或網銀提供「認證碼」才能完成交易。</p>
-                        <p class="warning"><i class="fas fa-exclamation-triangle"></i> **警惕：** 務必在正規平台內完成交易，不要點擊不明連結或掃描不明QR Code！</p>
-                    </div>
-                </div>
-
-            </div>
-        </section>
-
-        <section id="report">
-            <h2 class="section-title">提交情報：網絡詐騙案件追蹤</h2>
-            <div class="report-form-wrapper">
-                <p class="report-intro">您的情報能幫助我們建立反制數據庫。請提供盡可能多的細節。</p>
-                <form id="scamReportForm">
-                    <div class="form-grid">
-                        <div class="form-group">
-                            <label for="scamType"><i class="fas fa-bug"></i> 威脅類型:</label>
-                            <select id="scamType" required>
-                                <option value="">請選擇</option>
-                                <option value="Phishing">釣魚模塊</option>
-                                <option value="Investment">金融欺騙模塊</option>
-                                <option value="Impersonation">身份偽造模塊</option>
-                                <option value="Shopping">電商滲透模塊</option>
-                                <option value="Other">其他</option>
-                            </select>
-                        </div>
-
-                        <div class="form-group">
-                            <label for="contactMethod"><i class="fas fa-satellite-dish"></i> 入侵節點 (接觸方式):</label>
-                            <input type="text" id="contactMethod" placeholder="例如：WhatsApp ID, 虛假網站 URL, 詐騙電話號碼" required>
+            <section id="scam-types">
+                <h2 class="section-title">常見網絡詐騙類型分析與案例</h2>
+                <div class="scam-grid">
+                    <div class="scam-card">
+                        <div class="scam-icon"><i class="fas fa-envelope-open-text"></i></div>
+                        <h3>🎣 釣魚郵件/簡訊 (Phishing)</h3>
+                        <p>詐騙者冒充銀行、政府或知名公司，誘騙您點擊惡意連結或輸入個人登入資訊。</p>
+                        <button class="btn btn-action launch-solution" data-title="1. 釣魚郵件 / 簡訊 (Phishing)">
+                            如何解決 <i class="fas fa-chevron-right"></i>
+                        </button>
+                        <div class="scam-example">
+                            <h4>案例分析：</h4>
+                            <p>收到一封聲稱來自「您的銀行」的郵件，主題為「帳戶異常，請立即驗證！」郵件內含一個看似官方但實際是假冒的連結。點擊後，要求您輸入網銀帳號和密碼。</p>
+                            <p class="warning"><i class="fas fa-exclamation-triangle"></i> **警惕：** 銀行不會通過郵件或簡訊要求您點擊連結驗證帳戶！</p>
                         </div>
                     </div>
 
-                    <div class="form-group full-width">
-                        <label for="scamDetails"><i class="fas fa-terminal"></i> 情報詳細描述:</label>
-                        <textarea id="scamDetails" rows="7" placeholder="請描述事件發生經過、詐騙者提供的帳戶資訊或網址、截圖等關鍵數據" required></textarea>
+                    <div class="scam-card">
+                        <div class="scam-icon"><i class="fas fa-chart-line"></i></div>
+                        <h3>💰 假投資詐騙 (Investment Scams)</h3>
+                        <p>聲稱有高報酬、低風險的加密貨幣、外匯或股票投資，誘騙您投入資金，隨後關閉平台或凍結資金。</p>
+                        <button class="btn btn-action launch-solution" data-title="2. 假投資詐騙 (Investment Scams)">
+                            如何解決 <i class="fas fa-chevron-right"></i>
+                        </button>
+                        <div class="scam-example">
+                            <h4>案例分析：</h4>
+                            <p>在交友軟體上認識一位「投資專家」，熱情推薦某「高收益」的加密貨幣平台。起初小額投資確有盈利，但當您投入大筆資金後，該平台便無法提現，聯繫對方也石沉大海。</p>
+                            <p class="warning"><i class="fas fa-exclamation-triangle"></i> **警惕：** 凡是強調「保證獲利」、「穩賺不賠」的投資，幾乎都是詐騙！</p>
+                        </div>
                     </div>
 
-                    <div class="form-group full-width">
-                        <label for="contactInfo"><i class="fas fa-user-secret"></i> 您的加密聯繫方式 (選填，用於後續情報核實):</label>
-                        <input type="text" id="contactInfo" placeholder="電子郵件或加密訊息ID">
+                    <div class="scam-card">
+                        <div class="scam-icon"><i class="fas fa-user-friends"></i></div>
+                        <h3>📞 假冒親友/公務機關 (Impersonation)</h3>
+                        <p>通過電話、社交媒體或通訊軟體，假冒親友、警察、檢察官或政府人員，要求緊急匯款、索取個人資料或聲稱您涉入案件。</p>
+                        <button class="btn btn-action launch-solution" data-title="3. 冒充詐騙 (Impersonation)">
+                            如何解決 <i class="fas fa-chevron-right"></i>
+                        </button>
+                        <div class="scam-example">
+                            <h4>案例分析：</h4>
+                            <p>收到一條陌生號碼的簡訊：「我是xxx（你朋友的名字），我換號碼了，請加我Line。」加了Line後，對方會聲稱遇到困難（如車禍、急需醫藥費等），要求您幫忙匯款。</p>
+                            <p class="warning"><i class="fas fa-exclamation-triangle"></i> **警惕：** 遇到親友要求匯款，務必撥打原有電話號碼或見面確認！</p>
+                        </div>
                     </div>
 
-                    <button type="submit" class="btn btn-success"><i class="fas fa-database"></i> 提交情報到數據中心</button>
-                    <p id="reportMessage" class="success-message" style="display: none;"><i class="fas fa-check-circle"></i> 情報已接收，系統正在分析數據。</p>
-                </form>
-
-                <hr style="margin-top: 40px; border-color: #333;">
-                <h3 style="margin-top: 30px;"><i class="fas fa-users-cog"></i> 社群情報交流</h3>
-                <p>點擊下方按鈕，查看其他用戶回報的最新詐騙情報。</p>
-                <button id="showReportsButton" class="btn btn-action" style="background-color: #00BCD4; border-color: #00BCD4;">
-                    <i class="fas fa-exchange-alt"></i> 檢視社群情報交流區
-                </button>
-
-                <div id="communityReports" style="margin-top: 20px; display: none;">
-                    <h4>最新用戶回報情報：</h4>
-                    <div id="reportsList" class="reports-list">
-                        <p class="no-report-placeholder">目前沒有情報數據，請成為第一個貢獻者！</p>
+                    <div class="scam-card">
+                        <div class="scam-icon"><i class="fas fa-shopping-cart"></i></div>
+                        <h3>🎁 網路購物/拍賣詐騙</h3>
+                        <p>聲稱您中了大獎、商品價格極低，或假冒賣家/買家，但需要先支付手續費、稅金或運費，或誘騙您點擊惡意收款連結。</p>
+                        <button class="btn btn-action launch-solution" data-title="4. 網絡購物／拍賣詐騙 (Shopping & Auction)">
+                            如何解決 <i class="fas fa-chevron-right"></i>
+                        </button>
+                        <div class="scam-example">
+                            <h4>案例分析：</h4>
+                            <p>在某二手拍賣平台，賣家聲稱商品超低價，但要求您點擊他提供的「專屬連結」進行交易，該連結可能是釣魚網站，竊取您的信用卡資訊。或買家聲稱無法付款，要求您操作ATM或網銀提供「認證碼」才能完成交易。</p>
+                            <p class="warning"><i class="fas fa-exclamation-triangle"></i> **警惕：** 務必在正規平台內完成交易，不要點擊不明連結或掃描不明QR Code！</p>
+                        </div>
                     </div>
                 </div>
-                </div>
-        </section>
+            </section>
 
-        <section id="resources">
-            <h2 class="section-title">反制資源與數據庫</h2>
-            <div class="resource-grid">
-                <div class="resource-card">
-                    <i class="fas fa-file-contract"></i>
-                    <h3>反制策略手冊</h3>
-                    <p>學習如何主動識別和誘捕詐騙者，保護您的數據資產。</p>
-                    <a href="#latest" class="btn btn-action">反制策略中心 <i class="fas fa-chevron-right"></i></a>
+            <section id="report">
+                <h2 class="section-title">提交情報：網絡詐騙案件追蹤</h2>
+                <div class="report-form-wrapper">
+                    <p class="report-intro">您的情報能幫助我們建立反制數據庫。請提供盡可能多的細節。</p>
+                    <form id="scamReportForm">
+                        <div class="form-grid">
+                            <div class="form-group">
+                                <label for="scamType"><i class="fas fa-bug"></i> 威脅類型:</label>
+                                <select id="scamType" required>
+                                    <option value="">請選擇</option>
+                                    <option value="Phishing">釣魚模塊</option>
+                                    <option value="Investment">金融欺騙模塊</option>
+                                    <option value="Impersonation">身份偽造模塊</option>
+                                    <option value="Shopping">電商滲透模塊</option>
+                                    <option value="Other">其他</option>
+                                </select>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="contactMethod"><i class="fas fa-satellite-dish"></i> 入侵節點 (接觸方式):</label>
+                                <input type="text" id="contactMethod" placeholder="例如：WhatsApp ID, 虛假網站 URL, 詐騙電話號碼" required>
+                            </div>
+                        </div>
+
+                        <div class="form-group full-width">
+                            <label for="scamDetails"><i class="fas fa-terminal"></i> 情報詳細描述:</label>
+                            <textarea id="scamDetails" rows="7" placeholder="請描述事件發生經過、詐騙者提供的帳戶資訊或網址、截圖等關鍵數據" required></textarea>
+                        </div>
+
+                        <div class="form-group full-width">
+                            <label for="contactInfo"><i class="fas fa-user-secret"></i> 您的加密聯繫方式 (選填，用於後續情報核實):</label>
+                            <input type="text" id="contactInfo" placeholder="電子郵件或加密訊息ID">
+                        </div>
+
+                        <button type="submit" class="btn btn-success"><i class="fas fa-database"></i> 提交情報到數據中心</button>
+                        <p id="reportMessage" class="success-message" style="display: none;"><i class="fas fa-check-circle"></i> 情報已接收，系統正在分析數據。</p>
+                    </form>
+
+                    <hr style="margin-top: 40px; border-color: #333;">
+                    <h3 style="margin-top: 30px;"><i class="fas fa-users-cog"></i> 社群情報交流</h3>
+                    <p>點擊下方按鈕，查看其他用戶回報的最新詐騙情報。</p>
+                    <button id="showReportsButton" class="btn btn-action" style="background-color: #00BCD4; border-color: #00BCD4;">
+                        <i class="fas fa-exchange-alt"></i> 檢視社群情報交流區
+                    </button>
+
+                    <div id="communityReports" style="margin-top: 20px; display: none;">
+                        <h4>最新用戶回報情報：</h4>
+                        <div id="reportsList" class="reports-list">
+                            <p class="no-report-placeholder">目前沒有情報數據，請成為第一個貢獻者！</p>
+                        </div>
+                    </div>
                 </div>
-                <div class="resource-card">
-                    <i class="fas fa-search"></i>
-                    <h3>威脅數據庫查詢</h3>
-                    <p>輸入可疑電話號碼或網址，查詢是否已被標記為詐騙節點。</p>
-                    <a href="#database-query" class="btn btn-action">開始查詢 <i class="fas fa-chevron-right"></i></a>
+            </section>
+
+            <section id="resources">
+                <h2 class="section-title">反制資源與數據庫</h2>
+                <div class="resource-grid">
+                    <div class="resource-card">
+                        <i class="fas fa-file-contract"></i>
+                        <h3>反制策略手冊</h3>
+                        <p>學習如何主動識別和誘捕詐騙者，保護您的數據資產。</p>
+                        <a href="#" class="btn btn-action" onclick="showPage('strategy-center')">反制策略中心 <i class="fas fa-chevron-right"></i></a>
+                    </div>
+                    <div class="resource-card">
+                        <i class="fas fa-search"></i>
+                        <h3>威脅數據庫查詢</h3>
+                        <p>輸入可疑電話號碼或網址，查詢是否已被標記為詐騙節點。</p>
+                        <a href="#" class="btn btn-action" onclick="showPage('resources-database')">開始查詢 <i class="fas fa-chevron-right"></i></a>
+                    </div>
+                    <div class="resource-card">
+                        <i class="fas fa-question-circle"></i>
+                        <h3>加密通訊協議 (FAQ)</h3>
+                        <p>解答您關於保護隱私和安全通訊的常見疑問。</p>
+                        <button class="btn btn-action launch-solution" data-title="FAQ: 加密通訊協議">
+                            前往查看 <i class="fas fa-chevron-right"></i>
+                        </button>
+                    </div>
                 </div>
-                <div class="resource-card">
-                    <i class="fas fa-question-circle"></i>
-                    <h3>加密通訊協議 (FAQ)</h3>
-                    <p>解答您關於保護隱私和安全通訊的常見疑問。</p>
-                    <button class="btn btn-action launch-solution" data-title="FAQ: 加密通訊協議"> 前往查看 <i class="fas fa-chevron-right"></i> </button>
-                </div>
+            </section>
+        </main>
+
+        <footer>
+            <div class="container">
+                <p>&copy; 2025 以毒攻毒：網絡詐騙反制中心。數據保護協議生效中。</p>
+                <p><a href="#">隱私政策</a> | <a href="#">免責聲明</a></p>
             </div>
-        </section>
+        </footer>
+    </div>
 
-        <section id="database-query">
-            <h2 class="section-title">🔍 數據庫查詢與 AI 分析</h2>
-            <div class="query-wrapper">
-                <p class="report-intro">輸入電話號碼或網址，立即獲得 AI 風險分析報告</p>
-                <div class="query-input-group">
-                    <input type="text" id="queryInput" placeholder="請輸入電話號碼 (+國碼) 或完整網址 (URL)" required>
-                    <button id="queryButton" class="btn btn-primary"><i class="fas fa-microchip"></i> 運行 AI 分析</button>
+    <!-- 數據庫查詢頁面 -->
+    <div id="resources-database" class="page-section">
+        <header>
+            <div class="container">
+                <div class="logo">
+                    <i class="fas fa-shield-virus"></i>
+                    <h1>反詐威脅數據庫查詢</h1>
                 </div>
+                <p>輸入電話號碼或網址，立即獲得 AI 風險分析報告</p>
+            </div>
+        </header>
 
-                <div id="reportOutput" style="display: none;">
+        <nav>
+            <div class="container">
+                <ul>
+                    <li><a href="#" onclick="showPage('main-page')"><i class="fas fa-angle-left"></i> 返回反制中心</a></li>
+                    <li><a href="#" class="active" onclick="showPage('resources-database')"><i class="fas fa-search"></i> 數據庫查詢</a></li>
+                    <li><a href="#" onclick="showPage('strategy-center')"><i class="fas fa-brain"></i> 反制策略</a></li>
+                </ul>
+            </div>
+        </nav>
+
+        <main class="container">
+            <section id="database-query">
+                <h2 class="section-title">🔍 數據庫查詢與 AI 分析</h2>
+
+                <div class="query-wrapper">
+                    <p class="report-intro">請在下方欄位輸入您認為可疑的**電話號碼**（如：+886912345678）或**完整網址**（如：https://fakedbs.com.tw/login），系統將為您生成一份 AI 分析報告。</p>
+
+                    <div class="query-input-group">
+                        <input type="text" id="queryInput" placeholder="輸入電話號碼或網址..." required>
+                        <button id="queryButton" class="btn btn-primary"><i class="fas fa-microchip"></i> 運行 AI 分析</button>
                     </div>
 
-                <p id="loadingMessage" class="ai-update-note" style="display: none;">
-                    <i class="fas fa-spinner fa-spin"></i> AI 模塊正在運行深度分析，請稍候...
-                </p>
+                    <div id="reportOutput" style="display: none;"></div>
+
+                    <p id="loadingMessage" class="ai-update-note" style="display: none;">
+                        <i class="fas fa-spinner fa-spin"></i> AI 模塊正在運行深度分析，請稍候...
+                    </p>
+                </div>
+            </section>
+        </main>
+
+        <footer>
+            <div class="container">
+                <p>&copy; 2025 以毒攻毒：網絡詐騙反制中心。數據保護協議生效中。</p>
+                <p><a href="#">隱私政策</a> | <a href="#">免責聲明</a></p>
             </div>
-        </section>
+        </footer>
+    </div>
 
-        <section id="latest" class="strategy-section">
-            <h2 class="section-title"><i class="fas fa-magic"></i> 最新詐騙手法揭秘 (AI 實時更新)</h2>
-            <p class="ai-update-note">AI 系統根據全球情報，自動摘要當前最高發的 3-5 種詐騙類型，數據更新頻率：每小時。</p>
-
-            <div class="scam-detail-card high-risk">
-                <div class="risk-badge">AI 風險標識：**高**</div>
-                <h3>1. 🌐 AI 語音深度偽造詐騙 (Deepfake Voice Scams)</h3>
-                <p class="scam-method"><i class="fas fa-microphone"></i> **詐騙方式與常見話術：** 詐騙者使用 AI 技術，透過幾秒鐘的語音樣本，模仿親友或高管的聲音進行緊急電話或訊息，要求轉帳應急。</p>
-                <div class="scam-countermeasure">
-                    <i class="fas fa-check-circle"></i> **反制對策：** 立即掛斷電話。要求對方回答只有你們知道的「秘密問題」。設置家庭或公司專用的「驗證密語」。
+    <!-- 反制策略中心頁面 -->
+    <div id="strategy-center" class="page-section">
+        <header>
+            <div class="container">
+                <div class="logo">
+                    <i class="fas fa-shield-virus"></i>
+                    <h1>主動防禦：網絡詐騙反制策略中心</h1>
                 </div>
+                <p>系統化防護知識 | 實操決策流程 | 高效風險辨識能力</p>
             </div>
+        </header>
 
-            <div class="scam-detail-card medium-risk">
-                <div class="risk-badge">AI 風險標識：**中**</div>
-                <h3>2. 📉 零元投資保證獲利陷阱 (Zero-Cost Investment Trap)</h3>
-                <p class="scam-method"><i class="fas fa-dollar-sign"></i> **詐騙方式與常見話術：** 在社群媒體上散佈「免費」或「零成本」即可加入的投資群組或課程。前期給你小額獲利，一旦你加大投資，平台立刻關閉。</p>
-                <div class="scam-countermeasure">
-                    <i class="fas fa-check-circle"></i> **反制對策：** 世界上沒有穩賺不賠的投資。對於任何強調「零風險」、「保證高報酬」的項目一律無視。
-                </div>
+        <nav>
+            <div class="container">
+                <ul>
+                    <li><a href="#" onclick="showPage('main-page')"><i class="fas fa-angle-left"></i> 返回主頁</a></li>
+                    <li><a href="#" onclick="showPage('strategy-center'); scrollToSection('latest')"><i class="fas fa-bolt"></i> 最新手法揭秘</a></li>
+                    <li><a href="#" onclick="showPage('strategy-center'); scrollToSection('decision')"><i class="fas fa-brain"></i> 決策流程模擬</a></li>
+                    <li><a href="#" onclick="showPage('strategy-center'); scrollToSection('contact')"><i class="fas fa-hands-helping"></i> 尋求支援</a></li>
+                </ul>
             </div>
+        </nav>
 
-            <div class="scam-detail-card high-risk">
-                <div class="risk-badge">AI 風險標識：**高**</div>
-                <h3>3. 📱 虛假應用程式釣魚 (Fake App Phishing)</h3>
-                <p class="scam-method"><i class="fas fa-mobile-alt"></i> **詐騙方式與常見話術：** 透過簡訊或廣告誘騙您下載一個仿冒的官方應用程式（如銀行App、加密貨幣錢包）。一旦安裝，App會竊取您的螢幕截圖、輸入密碼或遠端控制您的設備。</p>
-                <div class="scam-countermeasure">
-                    <i class="fas fa-check-circle"></i> **反制對策：** 永遠只從官方 App Store (iOS) 或 Google Play Store (Android) 下載應用程式。收到連結時，請自行上官方網站查詢。
+        <main class="container strategy-content">
+            <section id="latest" class="strategy-section">
+                <h2 class="section-title"><i class="fas fa-magic"></i> 最新詐騙手法揭秘</h2>
+                <p class="ai-update-note">AI 系統根據全球情報，自動摘要當前最高發的 3-5 種詐騙類型。</p>
+
+                <div class="scam-detail-card high-risk">
+                    <div class="risk-badge">AI 風險標識：**高**</div>
+                    <h3>1. 🌐 AI 語音深度偽造詐騙 (Deepfake Voice Scams)</h3>
+                    <p class="scam-method"><i class="fas fa-microphone"></i> **詐騙方式與常見話術：** 詐騙者使用 AI 技術，透過幾秒鐘的語音樣本，模仿親友、老闆或高層的聲音，撥打電話或語音訊息，聲稱遇到緊急財務問題，要求立即轉帳。話術通常為：「我換了個新號碼，現在急需一筆錢應急，你快幫我轉給這個帳號。」</p>
+                    <div class="case-study">
+                        <h4><i class="fas fa-book-reader"></i> 真實案例還原：</h4>
+                        <p>林先生接到「兒子」的緊急語音電話，聲音與語氣幾近完全一致。對方聲稱因合約問題被扣留，急需支付保釋金。林先生在情緒慌亂下轉帳，直到聯繫到兒子本人，才發現被騙。</p>
+                    </div>
+                    <p class="touch-point"><i class="fas fa-crosshairs"></i> **被騙關鍵觸點分析：** 情緒勒索與緊急性誘導；聲音的相似度讓被害者跳過傳統的驗證環節。</p>
                 </div>
+
+                <div class="scam-detail-card medium-risk">
+                    <div class="risk-badge">AI 風險標識：**中**</div>
+                    <h3>2. 📦 假冒國際物流欠費簡訊釣魚</h3>
+                    <p class="scam-method"><i class="fas fa-sms"></i> **詐騙方式與常見話術：** 發送簡訊，假冒 DHL/FedEx/郵局等，聲稱包裹因「地址不全」或「關稅未繳」被扣留，要求點擊連結補繳少量費用（如 $10 SGD）。</p>
+                    <div class="case-study">
+                        <h4><i class="fas fa-book-reader"></i> 真實案例還原：</h4>
+                        <p>李小姐近期確實有網購，收到簡訊後不疑有他，點擊連結進入假網站。她輸入了信用卡資訊補繳 $5 運費，幾分鐘後，信用卡被盜刷數萬元。</p>
+                    </div>
+                    <p class="touch-point"><i class="fas fa-crosshairs"></i> **被騙關鍵觸點分析：** 利用使用者近期的購物行為習慣；小額費用降低警覺性，使人願意輸入完整信用卡資料。</p>
+                </div>
+            </section>
+
+            <section id="decision" class="strategy-section">
+                <h2 class="section-title"><i class="fas fa-clipboard-check"></i> 主動防禦決策流程模擬</h2>
+                <p class="flow-text">面對可疑信息時，請按照以下三步驟執行決策，以阻斷詐騙流程：</p>
+
+                <div class="flow-chart">
+                    <div class="flow-step">
+                        <span class="step-number">STEP 1</span>
+                        <h4>隔離與冷靜 (Isolation)</h4>
+                        <p>收到訊息當下，立即關閉連結、掛斷電話。不要回應、不要點擊任何附件。給自己 5 分鐘時間冷靜判斷。</p>
+                    </div>
+                    <div class="flow-arrow"><i class="fas fa-long-arrow-alt-right"></i></div>
+                    <div class="flow-step">
+                        <span class="step-number">STEP 2</span>
+                        <h4>雙重驗證 (Cross-Verify)</h4>
+                        <p>透過*官方公開渠道*（App、官方網站）或*原有聯繫方式*（非訊息提供的新號碼）聯繫該機構或親友，確認事件真偽。</p>
+                    </div>
+                    <div class="flow-arrow"><i class="fas fa-long-arrow-alt-right"></i></div>
+                    <div class="flow-step final-step">
+                        <span class="step-number">STEP 3</span>
+                        <h4>處置與回報 (Disposal)</h4>
+                        <p>確認為詐騙後，封鎖並刪除訊息。若有金錢損失或個資外洩，立即通知銀行並向警方報案。</p>
+                    </div>
+                </div>
+            </section>
+
+            <section id="contact" class="strategy-section">
+                <h2 class="section-title"><i class="fas fa-hands-helping"></i> 尋求專業支援</h2>
+                <p>如果無法確定是否為詐騙，請立即聯繫您的官方金融機構或當地反詐騙熱線：</p>
+                <ul>
+                    <li>新加坡反詐騙熱線: 1800-722-6688</li>
+                    <li>香港警方反詐騙協調中心: 18222</li>
+                </ul>
+            </section>
+        </main>
+
+        <footer>
+            <div class="container">
+                <p>&copy; 2025 以毒攻毒：網絡詐騙反制中心。數據保護協議生效中。</p>
+                <p><a href="#">隱私政策</a> | <a href="#">免責聲明</a></p>
             </div>
-        </section>
+        </footer>
+    </div>
 
-        <section id="decision" class="strategy-section">
-            <h2 class="section-title"><i class="fas fa-code-branch"></i> 應對決策流程模擬</h2>
-            <p class="ai-update-note">當您收到可疑訊息/電話/投資邀請時，請遵循此流程圖進行判斷與處置：</p>
-
-            <div class="flow-chart">
-                <div class="flow-step">
-                    <span class="step-number">STEP 1</span>
-                    <h4>隔離與冷靜 (Isolation)</h4>
-                    <p>收到訊息當下，立即關閉連結、掛斷電話。不要回應、不要點擊任何附件。給自己 5 分鐘時間冷靜判斷。</p>
-                </div>
-                <div class="flow-arrow"><i class="fas fa-long-arrow-alt-right"></i></div>
-                <div class="flow-step">
-                    <span class="step-number">STEP 2</span>
-                    <h4>雙重驗證 (Cross-Verify)</h4>
-                    <p>透過*官方公開渠道*（App、官方網站）或*原有聯繫方式*（非訊息提供的新號碼）聯繫該機構或親友，確認事件真偽。</p>
-                </div>
-                <div class="flow-arrow"><i class="fas fa-long-arrow-alt-right"></i></div>
-                <div class="flow-step final-step">
-                    <span class="step-number">STEP 3</span>
-                    <h4>處置與回報 (Disposal)</h4>
-                    <p>確認為詐騙後，封鎖並刪除訊息。若有金錢損失或個資外洩，立即通知銀行並向警方報案。</p>
-                </div>
-            </div>
-        </section>
-
-        <section id="contact" class="strategy-section">
-            <h2 class="section-title"><i class="fas fa-hands-helping"></i> 尋求專業支援</h2>
-            <p>如果無法確定是否為詐騙，請立即聯繫您的官方金融機構或當地反詐騙熱線尋求幫助。切勿在情緒恐慌下做出任何轉帳或提供密碼的決定。</p>
-            <div class="resource-grid" style="margin-top: 30px;">
-                <div class="resource-card">
-                    <i class="fas fa-phone-alt"></i>
-                    <h3>當地反詐騙專線</h3>
-                    <p>提供您當地警方或政府設立的 24 小時反詐騙諮詢熱線。</p>
-                    <a href="#" class="btn btn-action" style="background-color: #FF5722; border-color: #FF5722;">查看各地專線 <i class="fas fa-chevron-right"></i></a>
-                </div>
-                <div class="resource-card">
-                    <i class="fas fa-globe"></i>
-                    <h3>網絡安全機構</h3>
-                    <p>國家級網絡安全中心或電腦應急響應團隊（CERT）。</p>
-                    <a href="#" class="btn btn-action">前往官方網站 <i class="fas fa-chevron-right"></i></a>
-                </div>
-            </div>
-        </section>
-
-
-    </main>
-
-    <footer>
-        <div class="container">
-            <p>&copy; 2025 以毒攻毒：網絡詐騙反制中心。數據保護協議生效中。</p>
-            <p><a href="#">隱私政策</a> | <a href="#">免責聲明</a></p>
-        </div>
-    </footer>
-
+    <!-- 模態框（Modal） -->
     <div id="solutionModal" class="modal">
         <div class="modal-content">
             <span class="close-button" id="closeModal">&times;</span>
             <h2 id="modalTitle" class="modal-solution-title"><i class="fas fa-shield-alt"></i> </h2>
-            <div id="modalContent" class="modal-solution-text">
-            </div>
+            <div id="modalContent" class="modal-solution-text"></div>
             <button id="modalCloseButton" class="btn btn-modal-close"><i class="fas fa-power-off"></i> 關閉並返回分析區</button>
         </div>
     </div>
 
     <script>
-        document.addEventListener('DOMContentLoaded', () => {
+        // 頁面切換函數
+        function showPage(pageId) {
+            // 隱藏所有頁面
+            const pages = document.querySelectorAll('.page-section');
+            pages.forEach(page => {
+                page.classList.remove('active');
+            });
 
-            // --- 1. 解決方案文本數據庫 (來自 technology.html) ---
-            const solutionData = {
-                "1. 釣魚郵件 / 簡訊 (Phishing)": `
-                    <p>當收到冒充 HSBC Bank、CPF Board 或知名企業寄來的訊息時，首先要檢查寄件人電郵網域或簡訊內的鏈接是否與官方一致。釣魚鏈接經常以看似正確但包含細微差異的方式出現，例如多加符號、字母調換或使用免費假網域。</p>
-                    <p>若已點擊可疑連結並被此反制模塊攔截，用戶應立刻停止操作並保持冷靜，不要繼續在該頁面輸入銀行帳號、密碼或一次性驗證碼。正確做法是改用受信任的瀏覽器如 Safari 或 Microsoft Edge，主動搜尋銀行或官方網站並手動進入登入頁面，以確認帳戶是否真的存在警告問題，而非依賴訊息中的鏈接跳轉。</p>
-                    <p>在確定該訊息為釣魚後，建議使用回報功能將該郵件或簡訊提交至平台，例如轉寄至 Gmail Abuse Team 或在手機端利用內建封鎖與回報機制提交。同時若曾輸入資料，應立即在官方網站修改密碼，並啟用如 Google Authenticator 或銀行 App 內的多重驗證功能強化保護。最後提醒身邊親友，銀行不會透過訊息要求點擊連結驗證登入，以提高防詐意識層級。</p>
-                `,
-                "2. 假投資詐騙 (Investment Scams)": `
-                    <p>投資詐騙通常具有以下特點：強調「保證獲利」、「內部消息」、「專業指導」或「高報酬低風險」。記住，真正的投資一定有風險，且受金融監管。</p>
-                    <p>處置流程：立即停止注資。若已投入資金，應立即保留所有與對方的對話紀錄（Line、WhatsApp）、網站截圖、轉帳證明等。立即向警方報案，並提供所有證據。切勿相信詐騙者聲稱的「交保證金才能取出資金」等話術，那將是二次傷害。</p>
-                    <p>預防：只在受當地政府監管的正規金融機構進行投資。對於任何透過交友軟體、陌生群組推薦的投資平台，一律視為高危險信號。在投入資金前，請先上網搜尋該平台名稱，通常會有受害者回報紀錄。</p>
-                `,
-                "3. 冒充詐騙 (Impersonation)": `
-                    <p>無論對方假冒警察、檢察官、朋友或客服，其核心目的都是製造恐慌或利用信任，讓您失去理性判斷能力。公務機關不會通過電話要求您轉帳或提供個人密碼。</p>
-                    <p>處置流程：**立即掛斷電話**。如果對方是親友，請撥打您**原有的**電話號碼或視訊確認。如果對方是公務機關，請主動撥打官方公開的諮詢電話（如 165反詐騙專線）查詢。**絕對不要**依照對方指示操作 ATM 或網路銀行，也不要提供任何驗證碼。</p>
-                    <p>預防：為親友設置專門的「安全密碼」，在電話中要求對方提供密碼以驗證身份。啟用電話號碼識別軟體（如 Whoscall），以標記已知詐騙號碼。
-                `,
-                "4. 網絡購物／拍賣詐騙 (Shopping & Auction)": `
-                    <p>這類詐騙常見於二手交易平台或社群媒體上的虛假購物廣告。常見手法包括「假裝賣家要求您操作ATM解除分期付款」、「假裝買家聲稱無法付款，要求您提供個人銀行資訊或驗證碼」或「低價商品誘騙點擊釣魚連結」。</p>
-                    <p>處置流程：若收到類似通知，立即聯繫電商平台官方客服，確認是否有分期付款或交易異常。**切勿**點擊賣家或買家私下傳送的連結、QR Code，或提供任何「認證碼」。</p>
-                    <p>預防：所有交易、付款、聯絡都應在正規的電商平台系統內進行。如果對方要求轉到 LINE、WhatsApp 或其他私訊平台，通常是詐騙前兆。
-                `,
-                "FAQ: 加密通訊協議": `
-                    <p>加密通訊協議（如端對端加密）是保護您隱私的基石，它確保只有您和接收方能閱讀訊息內容。我們建議您將所有重要對話轉移到使用端對端加密的平台，例如 Signal 或 Telegram 的秘密聊天功能。</p>
-                    <p>常見問題：</p>
-                    <ul>
-                        <li>**Q: 甚麼是端對端加密 (E2EE)?** A: 只有對話雙方的設備擁有解密金鑰。即使服務提供商（如 Line/WhatsApp 伺服器）也無法讀取訊息內容。</li>
-                        <li>**Q: 截圖安全嗎?** A: 儘管通訊內容被加密，但設備上的螢幕截圖卻是明文（非加密）的。詐騙者若遠端控制您的手機，仍可竊取截圖中的機密資訊。</li>
-                        <li>**Q: 如何保護我的設備?** A: 確保手機作業系統和所有 App 保持最新版本，使用高強度密碼和啟用雙重認證 (2FA/MFA)。
-                    </ul>
-                    <p>主動防禦是最好的策略，請定期審查您安裝的 App 權限，避免授予不明 App 存取麥克風、相機或簡訊的權限。</p>
-                `
+            // 顯示目標頁面
+            const targetPage = document.getElementById(pageId);
+            if (targetPage) {
+                targetPage.classList.add('active');
+                window.scrollTo(0, 0);
+            }
+
+            return false; // 防止鏈接默認行為
+        }
+
+        // 滾動到特定區域（用於策略中心頁面內部導航）
+        function scrollToSection(sectionId) {
+            setTimeout(() => {
+                const section = document.getElementById(sectionId);
+                if (section) {
+                    section.scrollIntoView({ behavior: 'smooth' });
+                }
+            }, 100);
+        }
+
+        // 解決方案文本數據庫
+        const solutionData = {
+            "1. 釣魚郵件 / 簡訊 (Phishing)": `
+                <p>當收到冒充 HSBC Bank、CPF Board 或知名企業寄來的訊息時，首先要檢查寄件人電郵網域或簡訊內的鏈接是否與官方一致。釣魚鏈接經常以看似正確但包含細微差異的方式出現，例如多加符號、字母調換或使用免費假網域。</p>
+                <p>若已點擊可疑連結並被此反制模塊攔截，用戶應立刻停止操作並保持冷靜，不要繼續在該頁面輸入銀行帳號、密碼或一次性驗證碼。正確做法是改用受信任的瀏覽器如 Safari 或 Microsoft Edge，主動搜尋銀行或官方網站並手動進入登入頁面，以確認帳戶是否真的存在警告問題，而非依賴訊息中的鏈接跳轉。</p>
+                <p>在確定該訊息為釣魚後，建議使用回報功能將該郵件或簡訊提交至平台，例如轉寄至 Gmail Abuse Team 或在手機端利用內建封鎖與回報機制提交。同時若曾輸入資料，應立即在官方網站修改密碼，並啟用如 Google Authenticator 或銀行 App 內的多重驗證功能強化保護。最後提醒身邊親友，銀行不會透過訊息要求點擊連結驗證登入，以提高防詐意識層級。</p>
+            `,
+            "2. 假投資詐騙 (Investment Scams)": `
+                <p>投資詐騙通常出現在社交平台與通訊軟體，常見，例如透過 WhatsApp 或 Telegram 推薦所謂高回報、低風險的理財方案。遇到此類資訊，用戶首先要確認投資是否由合法持牌機構執行，可在新加坡查詢對方公司或個人是否在 Monetary Authority of Singapore 的監管名單中，或在香港查詢 SFC Public Register 以確認是否為註冊金融業者，避免落入無監管虛假平台。</p>
+                <p>若發現平台網址、App 來源點有問題，或對方遊說手法過度強調"保證獲利""穩賺不賠"，應直接拒絕投入資金，並刪除對話或離開群組。若已匯款投入詐騙平台，應保留所有對話、轉帳紀錄與網站截圖，並盡快向 Singapore Police Force 報案或致電 ScamShield 相關支援渠道協助攔截。</p>
+                <p>為避免資金再次被轉移，用戶也可聯絡自己的銀行客服，如 DBS Bank Fraud Hotline 申請爭議交易調查或暫時凍結帳戶安全檢測，以提高追回機會。完成回報後，建議重新檢視自己的財務操作習慣，提高對投資平台與陌生理財建議的判斷門檻。</p>
+            `,
+            "3. 冒充詐騙 (Impersonation)": `
+                <p>當有人透過自稱是親友、政府人員或警察聯絡您，尤其要求提供資料或協助轉帳、代墊罰款等，應先確認對方身份而非直接相信來電或訊息內容。如果是海外政府詐騙冒充，常見例子如假稱自己來自 INTERPOL 或地方稅務局，用戶應直接關閉電話、避免繼續通話，改用官方公開號碼回撥查證；如涉及新加坡報稅問題，可以透過 Singpass 登入對應政府系統查看。</p>
+                <p>如果是親友冒充，多見於社交帳號被盜，例如聲稱「我是你表哥，換電話號碼了」並要你加 Line，則應透過原本可信的方式聯絡本人確認，如直接用手機通話或面對面詢問，而不是使用對方提供的新號加好友。</p>
+                <p>若確認對方為冒充者，建議在相應平台上封鎖該帳號，並把對話與帳號資訊提交給平台安全中心，如 Meta Security Center 或手機反詐應用 ScamShield SG 作紀錄與防護。同時，提醒親友進行帳號安全檢查，啟用更強密碼與 2FA，避免下一位受害者出現。</p>
+            `,
+            "4. 網絡購物／拍賣詐騙 (Shopping & Auction)": `
+                <p>若在二手拍賣或購物平台遇到賣家聲稱商品價格極低、或您中了獎但需先支付手續費、運費、稅金才能領取，應提高警覺，詳細檢查對方提供的網站或支付鏈接。如果是購物詐騙，正規平台例如 Carousell 或 Shopee 都不會要求用戶離開 App 使用外部非官方付款鏈接。</p>
+                <p>遇到可疑交易，用戶應在平台內使用官方支付或聊天系統完成溝通，切勿掃描不明 QR Code 或點擊短鏈接 (如 bit.ly) 進行交易。若已付款卻未收到商品，應立刻在該平台內申請交易爭議，並同時聯絡付款平台客服，如果曾使用信用卡付款，也可發起退款或未授權申訴程序，例如在 Visa Dispute Resolution 提出爭議調查。</p>
+                <p>若賣家失聯或涉嫌侵占款項，也應截取該賣家帳號、鏈接紀錄與支付證據，提交至警方報案系統，如 Singapore Police Force 或所在國家警方處理。完成爭議回報後，也建議清查瀏覽器是否已下載可疑程式，必要時用 Windows Defender 或 Norton Antivirus 進行完整掃描，確保裝置無後門與資料外洩風險。</p>
+            `,
+            "FAQ: 加密通訊協議": `
+                <h4>1. 什麼是加密通訊協議？</h4>
+                <p>加密通訊協議是用來保護訊息在傳輸過程中不被第三方讀取或竄改的技術規則。它透過數學算法把內容轉換成亂碼，只有授權的接收者才能解密還原。常見的技術包含端到端加密（End-to-End Encryption, E2EE）、傳輸層加密（如 TLS） 以及非對稱加密等。</p>
+
+                <h4>2. 什麼是端到端加密 (E2EE)，它為何重要？</h4>
+                <p>端到端加密確保訊息從發送者到接收者全程都是密文，即使伺服器或網路供應商被攻擊，也無法看到內容。這對防止監聽、資料外洩、身份被盜用非常重要，是保護隱私通訊的最高標準之一。使用 E2EE 的應用包含 Signal 和 WhatsApp 等。</p>
+
+                <h4>3. 加密通訊是否代表 100% 安全？</h4>
+                <p>不是。加密保護的是傳輸內容，但不代表裝置本身安全。如果手機或電腦被植入監控軟體、惡意應用或有人實體取得裝置，訊息仍可能被讀取。因此，加密通訊需要搭配裝置安全、密碼管理、防釣魚與軟體權限控制才能完整保護。</p>
+
+                <h4>4. VPN、HTTPS、E2EE 的差別是什麼？</h4>
+                <ul>
+                    <li>**HTTPS**（通常透過 TLS 實現）保護你與網站之間的傳輸內容</li>
+                    <li>**VPN** 保護你的網路來源與 IP，使觀察者難以知道你在訪問哪些服務</li>
+                    <li>**E2EE** 保護通訊雙方的訊息內容，不讓伺服器或網路方讀取</li>
+                </ul>
+                <p>它們的保護層不同，可以同時使用但不能互相取代。</p>
+
+                <h4>5. 為什麼有些加密軟體仍會收集我的資料？</h4>
+                <p>部分通訊軟體會收集「中繼資料 (Metadata)」，例如：誰與誰聊天、何時聊天、訊息大小、裝置類型、網路 IP（視設計而定）。</p>
+                <p>這類資料雖然不包含訊息內容，但仍可用來系統性分析用戶。真正注重隱私的協議會盡可能減少或匿名這類紀錄，例如 Signal 的設計就強調減少中繼資料暴露。</p>
+
+                <h4>6. 我該如何選擇加密通訊協議或軟體？</h4>
+                <p>建議根據以下重點：</p>
+                <ul>
+                    <li>是否支援端到端加密</li>
+                    <li>是否開源、通過公眾安全審查</li>
+                    <li>是否最小化收集使用者資料</li>
+                    <li>是否支援群組加密、前向保密 (Forward Secrecy)</li>
+                    <li>是否有完整身份驗證機制、防止中間人攻擊</li>
+                </ul>
+
+                <h4>7. 什麼是前向保密 (Forward Secrecy)？</h4>
+                <p>前向保密指即使你的長期密鑰（例如帳號密碼）被洩露，過去的通訊內容也不能被回溯破解。這通常透過動態生成的臨時會話密鑰（Session Keys）來實現，是現代加密協議中非常重要的安全設計。</p>
+
+                <h4>8. 加密通訊會否影響速度或訊息品質？</h4>
+                <p>現代協議經過優化，加密造成的速度影響已非常小。相比隱私外洩的風險，這點效能成本基本可以忽略。而且高品質設計的協議還能避免傳輸被劫持或篡改，反而提升通訊可靠度。</p>
+
+                <h4>9. 什麼是中間人攻擊 (MITM)，加密通訊如何防止？</h4>
+                <p>中間人攻擊指攻擊者冒充通訊的一方，秘密攔截或修改數據。E2EE 通常會搭配公開密鑰驗證、指紋比對、信任鏈或用戶掃碼配對等方式來確保對話雙方身份真實，以防攔截。</p>
+
+                <h4>10. 我如何確保我的加密聊天對象是真的對方？</h4>
+                <p>安全型通訊應用通常提供「密鑰指紋 / 安全驗證碼」，你可以：</p>
+                <ul>
+                    <li>與對方當面核對</li>
+                    <li>透過掃描對方 QR Code 配對</li>
+                    <li>使用第三通道（面談或可信電話）確認</li>
+                </ul>
+
+                <h4>11. 除了加密通訊，我還需要做什麼來提升隱私？</h4>
+                <p>建議顯示以下 Best Practices 給用戶：</p>
+                <ul>
+                    <li>設定裝置鎖與磁碟加密</li>
+                    <li>使用密碼管理器、避免重複密碼</li>
+                    <li>關閉不必要的雲端備份（有些備份不含 E2EE）</li>
+                    <li>控制相簿/麥克風/位置/通知權限</li>
+                    <li>定期更新系統與應用</li>
+                    <li>警惕釣魚連結與假客服詐騙</li>
+                </ul>
+
+                <h4>12. 加密備份與加密通訊為何不能等同？</h4>
+                <p>因為有些通訊軟體雖然聊天過程支援 E2EE，但備份到雲端時可能沒有 E2EE，例如未加密的雲端備份會讓服務供應商或被入侵的雲端存儲讀取資料。真正安全的通訊方案會同時提供加密傳輸 + 加密備份。</p>
+            `
+        };
+
+        // **********************************************
+        // ************** 情報交換區邏輯 **************
+        // **********************************************
+
+        // 1. 數據庫模擬：使用 localStorage 存儲數據
+        const STORAGE_KEY = 'scamReportsDB';
+
+        /**
+         * 讀取本地儲存中的所有情報
+         * @returns {Array} 儲存的情報列表
+         */
+        const getReports = () => {
+            try {
+                const reportsJson = localStorage.getItem(STORAGE_KEY);
+                return reportsJson ? JSON.parse(reportsJson) : [];
+            } catch (error) {
+                console.error("讀取本地儲存失敗:", error);
+                return [];
+            }
+        };
+
+        /**
+         * 儲存單個情報到本地儲存
+         * @param {Object} report - 要儲存的情報對象
+         */
+        const saveReport = (report) => {
+            const reports = getReports();
+            // 新增 ID 和時間戳
+            const newReport = {
+                id: Date.now(),
+                timestamp: new Date().toLocaleString(),
+                ...report
             };
+            reports.unshift(newReport); // 將最新情報放在最前面
+            try {
+                localStorage.setItem(STORAGE_KEY, JSON.stringify(reports));
+            } catch (error) {
+                console.error("寫入本地儲存失敗:", error);
+                alert("數據儲存失敗，請檢查瀏覽器設定。");
+            }
+        };
 
+        /**
+         * 渲染情報列表到頁面
+         * @param {Array} reports - 情報列表
+         */
+        const renderReports = (reports) => {
+            const reportsList = document.getElementById('reportsList');
+            if (!reportsList) return;
 
-            // --- 2. 數據庫 AI 分析邏輯 (來自 resources-database.html) ---
+            reportsList.innerHTML = ''; // 清空現有列表
+
+            if (reports.length === 0) {
+                reportsList.innerHTML = '<p class="no-report-placeholder">目前沒有情報數據，請成為第一個貢獻者！</p>';
+                return;
+            }
+
+            reports.forEach(report => {
+                const reportElement = document.createElement('div');
+                reportElement.className = 'community-report-item';
+                reportElement.innerHTML = `
+                    <p><strong><i class="fas fa-bug"></i> 類型:</strong> ${report.scamType || '未知'}</p>
+                    <p><strong><i class="fas fa-satellite-dish"></i> 節點:</strong> ${report.contactMethod || 'N/A'}</p>
+                    <p><strong><i class="fas fa-clock"></i> 時間:</strong> ${report.timestamp}</p>
+                    <p><strong><i class="fas fa-terminal"></i> 詳情:</strong> ${report.scamDetails.substring(0, 100)}...</p>
+                    <hr style="border-top: 1px solid #444; margin: 10px 0;">
+                `;
+                reportsList.appendChild(reportElement);
+            });
+        };
+
+        // 2. 提交情報表單邏輯
+        document.addEventListener('DOMContentLoaded', function() {
+            const scamReportForm = document.getElementById('scamReportForm');
+            if (scamReportForm) {
+                scamReportForm.addEventListener('submit', function(event) {
+                    event.preventDefault();
+
+                    // 獲取表單數據
+                    const reportData = {
+                        scamType: document.getElementById('scamType').value,
+                        contactMethod: document.getElementById('contactMethod').value,
+                        scamDetails: document.getElementById('scamDetails').value,
+                        contactInfo: document.getElementById('contactInfo').value || '匿名'
+                    };
+
+                    // 儲存數據
+                    saveReport(reportData);
+
+                    // 顯示成功訊息並重置
+                    const reportMessage = document.getElementById('reportMessage');
+                    reportMessage.style.display = 'flex';
+                    setTimeout(() => {
+                        scamReportForm.reset();
+                        reportMessage.style.display = 'none';
+
+                        // 如果交流區已經打開，則重新渲染列表
+                        if (document.getElementById('communityReports') && document.getElementById('communityReports').style.display === 'block') {
+                            renderReports(getReports());
+                        }
+                    }, 3000);
+                });
+            }
+
+            // 3. 情報交流區按鈕邏輯
+            const showReportsButton = document.getElementById('showReportsButton');
+            const communityReports = document.getElementById('communityReports');
+
+            if (showReportsButton && communityReports) {
+                showReportsButton.addEventListener('click', () => {
+                    const isVisible = communityReports.style.display === 'block';
+
+                    if (!isVisible) {
+                        // 顯示情報區塊並讀取數據
+                        communityReports.style.display = 'block';
+                        showReportsButton.innerHTML = '<i class="fas fa-times-circle"></i> 隱藏社群情報交流區';
+                        renderReports(getReports());
+                    } else {
+                        // 隱藏區塊
+                        communityReports.style.display = 'none';
+                        showReportsButton.innerHTML = '<i class="fas fa-exchange-alt"></i> 檢視社群情報交流區';
+                    }
+                });
+            }
+        });
+
+        // 解決方案模態框邏輯
+        const modal = document.getElementById('solutionModal');
+        const modalTitle = document.getElementById('modalTitle');
+        const modalContent = document.getElementById('modalContent');
+        const closeButton = document.getElementById('closeModal');
+        const modalCloseButton = document.getElementById('modalCloseButton');
+
+        // 為所有解決方案按鈕添加事件監聽器
+        document.addEventListener('click', function(event) {
+            if (event.target.closest('.launch-solution')) {
+                const button = event.target.closest('.launch-solution');
+                const title = button.getAttribute('data-title');
+                const content = solutionData[title];
+
+                modalTitle.innerHTML = `<i class="fas fa-shield-alt"></i> ${title}`;
+                modalContent.innerHTML = content;
+
+                modal.style.display = 'block';
+                document.body.style.overflow = 'hidden'; // 阻止背景滾動
+            }
+        });
+
+        // 關閉模態框功能
+        const closeModal = () => {
+            modal.style.display = 'none';
+            document.body.style.overflow = 'auto';
+        };
+
+        if (closeButton) closeButton.addEventListener('click', closeModal);
+        if (modalCloseButton) modalCloseButton.addEventListener('click', closeModal);
+
+        window.onclick = function(event) {
+            if (event.target == modal) {
+                closeModal();
+            }
+        }
+
+        // **********************************************
+        // ************** 數據庫查詢邏輯 **************
+        // **********************************************
+        document.addEventListener('DOMContentLoaded', () => {
             const queryInput = document.getElementById('queryInput');
             const queryButton = document.getElementById('queryButton');
             const reportOutput = document.getElementById('reportOutput');
             const loadingMessage = document.getElementById('loadingMessage');
+
+            if (!queryInput || !queryButton) return;
 
             /**
              * 根據輸入內容判斷類型（電話號碼或網址）。
@@ -1195,104 +1619,90 @@
             /**
              * 模擬後端 AI 分析報告生成（取代真正的 API 呼叫）。
              * @param {string} input - 用戶輸入
-             * @returns {Promise<Object>}
+             * @returns {Promise<Object>} - 結構化的分析報告
              */
-            function getAiAnalysis(input) {
-                const type = determineType(input);
-
+            async function getAiAnalysis(input) {
                 return new Promise(resolve => {
                     // 模擬網絡延遲
                     setTimeout(() => {
+                        const type = determineType(input);
                         let analysis = {};
 
                         if (type === 'url') {
-                            if (input.includes('scam-invest.com') || input.includes('zero-profit.cc')) {
-                                // 高風險詐騙網址
+                            // 網址分析邏輯
+                            if (input.includes('fakedbs') || input.includes('taipeifakebank')) {
                                 analysis = {
-                                    risk: '極高風險',
+                                    risk: '高風險',
                                     riskClass: 'risk-high',
-                                    inputType: '網址',
-                                    inputValue: input,
-                                    scamType: '金融投資詐騙',
+                                    scamType: '釣魚網站 / 金融帳密竊取',
                                     features: [
-                                        '網域註冊時間極短 (< 30 天)。',
-                                        '伺服器位於高風險國家/地區。',
-                                        '網頁代碼與多個已知詐騙網站高度相似。'
+                                        '域名高度近似某知名銀行，意圖混淆視聽。',
+                                        '網頁設計與官方高度相似，但網域註冊時間極短。',
+                                        '要求在非 HTTPS 連線下輸入網銀帳號及密碼。'
                                     ],
-                                    reports: '高（> 50 筆）',
-                                    advice: '請立即封鎖並向當地警方報案。切勿在該網站上輸入任何個人資訊或轉帳。'
+                                    reports: '高（近 500 次回報）',
+                                    advice: '立即關閉網頁！不要輸入任何個人資料或帳密。透過官方 App 登入確認。'
                                 };
-                            } else if (input.includes('bank-verify.info') || input.includes('official-update.net')) {
-                                // 中風險釣魚網址
-                                analysis = {
-                                    risk: '可疑風險',
-                                    riskClass: 'risk-suspicious',
-                                    inputType: '網址',
-                                    inputValue: input,
-                                    scamType: '釣魚模塊/身份竊取',
-                                    features: [
-                                        '網域名稱試圖模仿知名品牌。',
-                                        '網頁未啟用有效的 SSL 加密 (HTTP)。',
-                                        '數據庫中有少量用戶回報為釣魚網站。'
-                                    ],
-                                    reports: '中（10-49 筆）',
-                                    advice: '請勿在該網頁上輸入密碼或個資。建議聯繫官方機構確認該連結是否為真。'
-                                };
-                            } else {
-                                // 低風險/安全網址
+                            } else if (input.includes('lowrisk')) {
                                 analysis = {
                                     risk: '安全',
                                     riskClass: 'risk-safe',
-                                    inputType: '網址',
-                                    inputValue: input,
-                                    scamType: '無威脅',
+                                    scamType: '無明顯威脅',
                                     features: [
-                                        '網址為知名品牌或政府機構的官方網域。',
-                                        '伺服器地點與品牌所在地區吻合。',
-                                        '數據庫中無惡意回報記錄。'
+                                        '網域註冊時間長，有有效 SSL 憑證。',
+                                        '為知名國際企業官方網站。',
+                                        '未偵測到惡意程式碼或釣魚模組。'
                                     ],
                                     reports: '低（無）',
-                                    advice: '此網址目前未被標記為威脅。但建議始終檢查網址列是否為您熟知的正確網域。'
+                                    advice: '請保持警惕，定期更新密碼，並啟用多重驗證。'
+                                };
+                            } else {
+                                analysis = {
+                                    risk: '可疑',
+                                    riskClass: 'risk-suspicious',
+                                    scamType: '未知來源網站 / 潛在惡意軟體',
+                                    features: [
+                                        '網域註冊資訊為隱藏，難以追蹤。',
+                                        '非知名網域，且提供高價值的免費服務（例如免費抽獎）。',
+                                        '網站內含追蹤腳本，可能收集用戶瀏覽數據。'
+                                    ],
+                                    reports: '中（約 50 次回報）',
+                                    advice: '建議使用瀏覽器的沙盒模式訪問。切勿在該網站上進行任何支付或授權操作。'
                                 };
                             }
                         } else if (type === 'phone') {
-                            if (input.includes('0987654321') || input.includes('+886987654321')) { // 虛構的高危險電話
+                            // 電話號碼分析邏輯
+                            if (input.includes('09') || input.includes('+886')) {
                                 analysis = {
-                                    risk: '極高風險',
+                                    risk: '高風險',
                                     riskClass: 'risk-high',
-                                    inputType: '電話號碼',
-                                    inputValue: input,
-                                    scamType: '冒充公務機關/恐嚇詐騙',
+                                    scamType: '假冒親友/公務機關 / 語音詐騙',
                                     features: [
-                                        '號碼已被多個國際反詐中心標記。',
-                                        '歷史紀錄顯示常在夜間撥打。',
-                                        '該號碼使用的語音已被 AI 識別為深度偽造。'
+                                        '電話號碼來自高風險區段（如 +886 09 開頭）。',
+                                        '過往回報記錄中，該號碼曾用於「猜猜我是誰」或「涉案」話術。',
+                                        '通話中情緒勒索，要求緊急轉帳或提供驗證碼。'
                                     ],
-                                    reports: '高（> 100 筆）',
-                                    advice: '這是已知詐騙熱線。請立即封鎖該號碼，並提醒家人不要接聽。'
+                                    reports: '極高（近 1000 次回報）',
+                                    advice: '立即掛斷電話！勿回撥。撥打親友原有號碼或 165/18222 反詐騙熱線核實。'
                                 };
-                            } else if (input.includes('0212345678')) { // 虛構的中危險電話
+                            } else if (input.includes('+65')) {
                                 analysis = {
-                                    risk: '可疑風險',
+                                    risk: '可疑',
                                     riskClass: 'risk-suspicious',
-                                    inputType: '電話號碼',
-                                    inputValue: input,
-                                    scamType: '推銷/個資探測',
+                                    scamType: '假冒客服/快遞欠費',
                                     features: [
-                                        '號碼為 VoIP 虛擬號碼，難以追蹤。',
-                                        '有用戶回報為惡意行銷或個資探測。'
+                                        '電話開頭來自非官方號碼（非 1800 服務號碼）。',
+                                        '話術聲稱您的快遞包裹或銀行服務有異常。',
+                                        '語音為預錄的機器人語音。'
                                     ],
-                                    reports: '中（5-20 筆）',
-                                    advice: '接聽時請勿透露任何個人資訊或回答是/否等簡單問題，建議直接掛斷並封鎖。'
+                                    reports: '中（約 80 次回報）',
+                                    advice: '主動掛斷，並透過官方網站的聯絡方式核實，不要理會此來電。'
                                 };
                             } else {
-                                // 低風險/安全號碼
                                 analysis = {
                                     risk: '安全',
                                     riskClass: 'risk-safe',
-                                    inputType: '電話號碼',
-                                    inputValue: input,
-                                    scamType: '無威脅',
+                                    scamType: '無明顯威脅',
                                     features: [
                                         '號碼為已知政府機構或大型企業客服熱線。',
                                         '未有惡意回報記錄。'
@@ -1306,8 +1716,6 @@
                             analysis = {
                                 risk: '無法判斷',
                                 riskClass: 'risk-suspicious',
-                                inputType: '未知',
-                                inputValue: input,
                                 scamType: '輸入格式錯誤',
                                 features: ['請輸入有效的電話號碼（含國碼）或完整的網址（含 http/https）。'],
                                 reports: '無',
@@ -1315,28 +1723,39 @@
                             };
                         }
 
+                        // 將輸入的類型和內容也加入報告
+                        analysis.inputType = type === 'unknown' ? '未知' : (type === 'phone' ? '電話號碼' : '網址');
+                        analysis.inputContent = input;
+
                         resolve(analysis);
-                    }, 1500); // 模擬 1.5 秒的 AI 分析時間
+                    }, 1500); // 模擬延遲 1.5 秒
                 });
             }
 
             /**
-             * 渲染報告結果到頁面。
-             * @param {Object} analysis - AI 分析報告對象
+             * 渲染分析報告到頁面。
+             * @param {Object} analysis - AI 分析結果對象
              */
             function renderReport(analysis) {
-                const featuresList = analysis.features.map(f => `<li><strong>• 威脅特徵:</strong> ${f}</li>`).join('');
+                const featuresList = analysis.features.map(f => `<li><strong><i class="fas fa-crosshairs"></i> 可疑特徵：</strong> ${f}</li>`).join('');
 
                 const reportHTML = `
                     <div class="report-header">
-                        <h3>分析結果：${analysis.inputValue}</h3>
-                        <div class="risk-badge-output ${analysis.riskClass}">${analysis.risk}</div>
+                        <h3><i class="fas fa-microchip"></i> AI 分析報告</h3>
+                        <span class="risk-badge-output ${analysis.riskClass}">
+                            風險評級：${analysis.risk}
+                        </span>
                     </div>
                     <div class="report-content">
                         <ul>
-                            <li><strong>🎯 輸入類型:</strong> ${analysis.inputType}</li>
-                            <li><strong>🔥 潛在詐騙類型:</strong> ${analysis.scamType}</li>
-                            <li><strong>📢 社群回報量:</strong> ${analysis.reports}</li>
+                            <li><strong>輸入類型：</strong> ${analysis.inputType}</li>
+                            <li><strong>查詢目標：</strong> ${analysis.inputContent}</li>
+                            <li><strong>可能詐騙類型：</strong> ${analysis.scamType}</li>
+                            <li><strong>過往回報模擬數據：</strong> ${analysis.reports}</li>
+                        </ul>
+                        <hr style="border-top: 1px solid #444; margin: 15px 0;">
+                        <h4><i class="fas fa-bug"></i> 威脅特徵檢測</h4>
+                        <ul>
                             ${featuresList}
                         </ul>
                         <div class="advice-box">
@@ -1346,112 +1765,13 @@
                     </div>
                 `;
 
-                reportOutput.innerHTML = reportHTML;
-                reportOutput.style.display = 'block';
+                if (reportOutput) {
+                    reportOutput.innerHTML = reportHTML;
+                    reportOutput.style.display = 'block';
+                }
             }
 
-            // --- 3. 社群情報模塊 (來自 technology.html) ---
-
-            const STORAGE_KEY = 'scamReportsDB';
-            const scamReportForm = document.getElementById('scamReportForm');
-            const reportMessage = document.getElementById('reportMessage');
-            const showReportsButton = document.getElementById('showReportsButton');
-            const communityReports = document.getElementById('communityReports');
-            const reportsListContainer = document.getElementById('reportsList');
-
-            /**
-             * 讀取本地儲存中的所有情報
-             * @returns {Array} 儲存的情報列表
-             */
-            const getReports = () => {
-                try {
-                    const reportsJson = localStorage.getItem(STORAGE_KEY);
-                    return reportsJson ? JSON.parse(reportsJson) : [];
-                } catch (error) {
-                    console.error("讀取本地儲存失敗:", error);
-                    return [];
-                }
-            };
-
-            /**
-             * 儲存單個情報到本地儲存
-             * @param {Object} report - 要儲存的情報對象
-             */
-            const saveReport = (report) => {
-                const reports = getReports();
-                // 新增 ID 和時間戳
-                const newReport = {
-                    id: Date.now(),
-                    timestamp: new Date().toLocaleString(),
-                    ...report
-                };
-                reports.unshift(newReport); // 將最新情報放在最前面
-                try {
-                    // 只保留最新的 20 筆資料
-                    const limitedReports = reports.slice(0, 20);
-                    localStorage.setItem(STORAGE_KEY, JSON.stringify(limitedReports));
-                } catch (error) {
-                    console.error("寫入本地儲存失敗:", error);
-                    alert("數據儲存失敗，請檢查瀏覽器設定。");
-                }
-            };
-
-            /**
-             * 渲染情報列表到頁面
-             * @param {Array} reports - 情報列表
-             */
-            const renderReports = (reports) => {
-                if (reports.length === 0) {
-                    reportsListContainer.innerHTML = '<p class="no-report-placeholder">目前沒有情報數據，請成為第一個貢獻者！</p>';
-                    return;
-                }
-
-                const reportsHTML = reports.map(report => `
-                    <div class="community-report-item">
-                        <p><strong>類型:</strong> ${report.scamType} | <strong>節點:</strong> ${report.contactMethod}</p>
-                        <p><strong>描述:</strong> ${report.scamDetails.substring(0, 50)}...</p>
-                        <p style="text-align: right; color: #888; font-size: 0.8em;">回報時間: ${report.timestamp}</p>
-                    </div>
-                `).join('');
-
-                reportsListContainer.innerHTML = reportsHTML;
-            };
-
-            // 提交表格事件處理
-            scamReportForm.addEventListener('submit', (e) => {
-                e.preventDefault();
-
-                const report = {
-                    scamType: document.getElementById('scamType').value,
-                    contactMethod: document.getElementById('contactMethod').value.trim(),
-                    scamDetails: document.getElementById('scamDetails').value.trim(),
-                    contactInfo: document.getElementById('contactInfo').value.trim(),
-                };
-
-                saveReport(report);
-
-                // 顯示成功信息
-                reportMessage.style.display = 'block';
-                scamReportForm.reset();
-                setTimeout(() => {
-                    reportMessage.style.display = 'none';
-                }, 5000);
-            });
-
-            // 顯示/隱藏情報列表事件處理
-            showReportsButton.addEventListener('click', () => {
-                const isHidden = communityReports.style.display === 'none';
-                communityReports.style.display = isHidden ? 'block' : 'none';
-                showReportsButton.innerHTML = isHidden ? '<i class="fas fa-times-circle"></i> 隱藏社群情報交流區' : '<i class="fas fa-exchange-alt"></i> 檢視社群情報交流區';
-
-                if (isHidden) {
-                    const reports = getReports();
-                    renderReports(reports);
-                }
-            });
-
-
-            // --- 4. 數據庫 AI 分析事件處理 (來自 resources-database.html) ---
+            // 事件處理
             queryButton.addEventListener('click', async () => {
                 const input = queryInput.value.trim();
 
@@ -1461,59 +1781,24 @@
                 }
 
                 // 顯示加載信息並隱藏舊報告
-                reportOutput.style.display = 'none';
-                loadingMessage.style.display = 'block';
+                if (reportOutput) reportOutput.style.display = 'none';
+                if (loadingMessage) loadingMessage.style.display = 'block';
                 queryButton.disabled = true;
 
                 try {
                     const analysis = await getAiAnalysis(input);
                     renderReport(analysis);
                 } catch (error) {
-                    reportOutput.innerHTML = `<p style="color: #FF5722;">分析失敗：${error.message}</p>`;
-                    reportOutput.style.display = 'block';
+                    if (reportOutput) {
+                        reportOutput.innerHTML = `<p style="color: #FF5722;">分析失敗：${error.message}</p>`;
+                        reportOutput.style.display = 'block';
+                    }
                 } finally {
                     // 隱藏加載信息，恢復按鈕
-                    loadingMessage.style.display = 'none';
+                    if (loadingMessage) loadingMessage.style.display = 'none';
                     queryButton.disabled = false;
                 }
             });
-
-            // --- 5. 解決方案模態框邏輯 (來自 technology.html) ---
-            const modal = document.getElementById('solutionModal');
-            const modalTitle = document.getElementById('modalTitle');
-            const modalContent = document.getElementById('modalContent');
-            const closeButton = document.getElementById('closeModal');
-            const modalCloseButton = document.getElementById('modalCloseButton');
-            const solutionButtons = document.querySelectorAll('.launch-solution');
-
-            solutionButtons.forEach(button => {
-                button.addEventListener('click', function() {
-                    const title = this.getAttribute('data-title');
-                    const content = solutionData[title];
-
-                    modalTitle.innerHTML = `<i class="fas fa-shield-alt"></i> ${title}`;
-                    modalContent.innerHTML = content;
-
-                    modal.style.display = 'block';
-                    document.body.style.overflow = 'hidden'; // 阻止背景滾動
-                });
-            });
-
-            // 關閉模態框功能
-            const closeModal = () => {
-                modal.style.display = 'none';
-                document.body.style.overflow = 'auto';
-            };
-
-            // 核心修復點：使用 addEventListener 確保穩定
-            closeButton.addEventListener('click', closeModal);
-            modalCloseButton.addEventListener('click', closeModal);
-
-            window.onclick = function(event) {
-                if (event.target == modal) {
-                    closeModal();
-                }
-            }
         });
     </script>
 </body>
